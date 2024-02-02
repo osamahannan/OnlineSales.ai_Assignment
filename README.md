@@ -10,7 +10,7 @@
 - Real-time add and remove form fields.
 - Each form field has a label and a corresponding field type.
 - Users are able to specify the type of each form field. Fields to be supported: text input, text area, dropdown, checkbox, radio button
-- Storing form data in JSON file.(Not implemented fully)
+- Storing form data in JSON file.
 
 ## 📌 Installation
 
@@ -28,15 +28,6 @@ Follow these steps to get the project up and running on your local machine:
 3. Specify the label and type of input type and click on the "Add" button.
 4. The input field will be created, enter the value in the field.
 5. Add all the required fields and click on submit. The data will be stored in a JSON file.
-
-## 📌 License
-
-[MIT License](LICENSE)
-
-## 📌 Acknowledgements
-
-- [React](https://reactjs.org) - A JavaScript library for building user interfaces.
-
 
 ## 📌 Contact
 
