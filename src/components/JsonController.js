@@ -2,17 +2,17 @@ import React from 'react'
 import { defaultJson } from "../JsonData"
 import {useFormContext} from "../FormProvider"
 
-const JsonController = ({setShowForm}) => {
-  const { formValues, setFormValues } = useFormContext();
-  const [textArea, setTextArea] = React.useState(defaultJson)
-
-  const parseJson = (value) => {
-    try {
-      return JSON.parse(value)
-    } catch {
-      return [];
-    }
+export const parseJson = (value) => {
+  try {
+    return JSON.parse(value)
+  } catch {
+    return [];
   }
+}
+
+const JsonController = ({setShowForm}) => {
+  const { setFormValues } = useFormContext();
+  const [textArea, setTextArea] = React.useState(defaultJson)
 
   const handleCreateForm = () => {
     setFormValues(parseJson(textArea))

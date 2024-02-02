@@ -114,6 +114,7 @@ input[type=radio] {
 }
 .dialog-box > input,
 .dialog-box > select {
+  cursor: pointer;
   padding: 0.5rem 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -128,6 +129,16 @@ input[type=radio] {
 .option-container {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.option-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.option-box > div {
+  color: rgb(95, 94, 94);
 }
 
 .label-option {
@@ -137,6 +148,7 @@ input[type=radio] {
 
 .select {
   width: 100%;
+  cursor: pointer;
 }
 
 .controller {

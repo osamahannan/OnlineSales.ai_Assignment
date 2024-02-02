@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Option = ({handleAddOptions, handleLabelOption}) => {
+const Option = ({handleAddOptions}) => {
 
   const [optionLabel, setOptionLabel] = useState("")
 
@@ -8,8 +8,6 @@ const Option = ({handleAddOptions, handleLabelOption}) => {
     setOptionLabel("")
     handleAddOptions(optionLabel)
   }
-
-  console.log('optionLabel =', optionLabel)
 
   return (
     <div className='label-option'>

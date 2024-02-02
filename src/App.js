@@ -11,7 +11,7 @@ function App() {
         <h1>Create Your Own Form!</h1>
         {showForm ? (
           <>
-            <Form />
+            <Form setShowForm={setShowForm}/>
           </>
         ) : (
           <JsonController setShowForm={setShowForm} />

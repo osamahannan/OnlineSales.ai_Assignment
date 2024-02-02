@@ -6,27 +6,20 @@ import Option from "./Option";
 import {useFormContext} from "../FormProvider"
 import { toast } from 'react-toastify';
 
-const Form = () => {
+const Form = ({setShowForm}) => {
   const { formValues, setFormValues } = useFormContext();
-  // const [formValues, setFormValues] = useState([]);
   const [toggle, setTogggle] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [options, setOptions] = useState([]);
-
-  console.log("formValues =", formValues)
 
   const inputRef = useRef();
   const selectRef = useRef();
 
   const handleChange = (e, index, type) => {
-    console.log("type =", type)
     const name = e.target.name
     const values = [...formValues];
-    console.log("e.target.radio =", e.target.checked)
     if(type === "checkbox" || type === "radio") {
-      console.log("e.target.checked =", e.target.checked)
       if(e.target.checked === false) {
-        console.log("it came in if")
         values[index].value = "";
       } else {
         values[index].value = String(e.target.checked);
@@ -46,7 +39,8 @@ const Form = () => {
       values.push({
         label: inputRef.current.value || "label",
         type: "select",
-        value: options
+        options: options,
+        value: options[0]?.value
       })
     } else {
       values.push({
@@ -75,7 +69,6 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     JsonForm.values.push([...formValues]);
-    console.log(JsonForm);
     e.preventDefault();
     console.log(
       formValues.map((val) => {
@@ -85,7 +78,6 @@ const Form = () => {
   };
 
   const handleChangeSelect = (e) => {
-    console.log("e =", e.target.value)
     const type = e.target.value
     if (type === "select") {
       setShowOptions(true)
@@ -94,11 +86,8 @@ const Form = () => {
     }
   }
 
-  console.log("options =", options)
-
   const handleAddOptions = (value) => {
     setOptions([...options, {
-      // label: "",
       value
     }])
   }
@@ -122,6 +111,7 @@ const Form = () => {
         position: "top-right",
         autoClose: 2000
       })
+      setShowForm(false)
     }
   }
 
@@ -149,8 +139,6 @@ const Form = () => {
             <select ref={selectRef} onChange={handleChangeSelect}>
               <option value="text">Text</option>
               <option value="number">Number</option>
-              {/* <option value="email">Email</option>
-              <option value="password">Password</option> */}
               <option value="checkbox">Checkbox</option>
               <option value="radio">Radio</option>
               <option value="select">Select</option>
@@ -166,9 +154,12 @@ const Form = () => {
           <>
             <div className="option-container">
               <Option handleAddOptions={handleAddOptions} />
-              {options?.map(option => {
+              {options?.map((option, idx) => {
                 return (
-                  <div>{option?.value}</div>
+                  <div className="option-box" key={idx}>
+                    <span>{`Option label ${idx+1}: `}</span>
+                    <div>{option?.value}</div>
+                  </div>
                 )
               })}
             </div>
