@@ -3,7 +3,7 @@
 
 ## 📌 Demo 
 
-[Link to Live Demo](https://dynamic-form-generator-pp.netlify.app/) 🚀
+[Link to Live Demo](https://awsome-form-builder.netlify.app/) 🚀
 
 ## 📌 Features
 
@@ -16,7 +16,7 @@
 
 Follow these steps to get the project up and running on your local machine:
 
-1. Clone the repository: `git clone https://github.com/Prachi24599/dynamic-form-generator.git`
+1. Clone the repository: `https://github.com/osamahannan/OnlineSales.ai_Assignment.git`
 2. Navigate to the project directory: `cd dynamic-form-generator
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm start`
@@ -42,7 +42,7 @@ Follow these steps to get the project up and running on your local machine:
 
 If you have any questions or feedback, feel free to reach out:
 
-- Email: polakhare.prachi@gmail.com
-- Linkedin: [Prachi Polakhare](https://www.linkedin.com/in/prachi-polakhare/)
+- Email: osamahannan7@gmail.com
+- Linkedin: [Osama Hannan](https://www.linkedin.com/in/osama-hannan-7337921a0/)
 
 Happy coding!
